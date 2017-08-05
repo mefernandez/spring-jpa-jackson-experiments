@@ -1,0 +1,1 @@
+insert into employee (id, name, pass) values (1, 'Mark', 'Secret');

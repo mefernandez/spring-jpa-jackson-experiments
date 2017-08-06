@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.json.experiments.jpa;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

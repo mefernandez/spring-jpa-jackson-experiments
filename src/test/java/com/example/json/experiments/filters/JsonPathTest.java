@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.json.experiments.filters;
 
 import static org.junit.Assert.*;
 

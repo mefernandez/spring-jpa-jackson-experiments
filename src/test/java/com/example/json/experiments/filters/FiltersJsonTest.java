@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.json.experiments.filters;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Test;

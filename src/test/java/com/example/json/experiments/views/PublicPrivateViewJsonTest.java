@@ -1,14 +1,17 @@
-package com.example.demo;
+package com.example.json.experiments.views;
 
-import org.junit.*;
-import org.junit.runner.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.boot.test.autoconfigure.json.*;
-import org.springframework.boot.test.context.*;
-import org.springframework.boot.test.json.*;
-import org.springframework.test.context.junit4.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import static org.assertj.core.api.Assertions.*;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.json.JsonTest;
+import org.springframework.boot.test.json.JacksonTester;
+import org.springframework.boot.test.json.JsonContent;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
 @JsonTest
@@ -16,6 +19,13 @@ public class PublicPrivateViewJsonTest {
 
     @Autowired
     private JacksonTester<Employee> json;
+    
+    @Before
+    public void setup() {
+        ObjectMapper objectMapper = new ObjectMapper(); 
+        // Possibly configure the mapper
+        JacksonTester.initFields(this, objectMapper);
+    }
 
     @Test
     public void publicViewSerializesEmployeeName() throws Exception {

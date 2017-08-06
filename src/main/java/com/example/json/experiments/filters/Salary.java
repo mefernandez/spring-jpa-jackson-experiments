@@ -1,10 +1,12 @@
-package com.example.demo;
+package com.example.json.experiments.filters;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.SequenceGenerator;
+
+import com.example.json.experiments.jpa.BaseEntity;
 
 import lombok.Data;
 

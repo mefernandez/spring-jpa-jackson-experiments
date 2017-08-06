@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @JsonTest
-public class MyJsonTests {
+public class PublicPrivateViewJsonTest {
 
     @Autowired
     private JacksonTester<Employee> json;
@@ -44,6 +44,15 @@ public class MyJsonTests {
         // Assert against a `.json` file in the same package as the test
         JsonContent<Employee> serializedEmployee = this.json.forView(View.Private.class).write(details);
         assertThat(serializedEmployee).extractingJsonPathStringValue("@.pass").isEqualTo("Secret");
+    }
+
+    @Test
+    public void privateViewSerializesEmployeeName() throws Exception {
+    	Employee details = new Employee();
+    	details.setName("Mark");
+        // Assert against a `.json` file in the same package as the test
+        JsonContent<Employee> serializedEmployee = this.json.forView(View.Private.class).write(details);
+        assertThat(serializedEmployee).extractingJsonPathStringValue("@.name").isEqualTo("Mark");
     }
 
 }

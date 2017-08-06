@@ -4,6 +4,6 @@ public interface View {
 	
 	public interface Public {}
 	
-	public interface Private {}
-
+	public interface Private extends Public {}
+	
 }
